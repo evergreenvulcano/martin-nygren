@@ -21,6 +21,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--paper);
   color: var(--text);
   font-family: var(--sans);
@@ -50,7 +51,7 @@ body {
 .page {
   width: min(40rem, calc(100% - 2.5rem));
   margin: 0 auto;
-  padding: 2.25rem 0 4.5rem;
+  padding: 1.4rem 0 4.5rem;
 }
 
 .site-header {
@@ -141,6 +142,20 @@ section {
   margin-top: 2.5rem;
 }
 
+.hero {
+  margin: 0;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 58%;
+  background: #243028;
+}
+
 .intro {
   margin-top: 0;
 }
@@ -157,6 +172,11 @@ section {
 
 .portrait {
   margin: 0.15rem 0 0;
+}
+
+.portrait picture,
+.break picture {
+  display: block;
 }
 
 .portrait img {
@@ -283,9 +303,43 @@ address {
   font-style: normal;
 }
 
+.break {
+  margin: 2.75rem 0 0;
+}
+
+.break img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #1c1917;
+}
+
+.break-goldfish {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.break-goldfish img {
+  aspect-ratio: 4 / 3;
+  object-position: center 42%;
+}
+
+.break-arch {
+  width: min(28rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.break-arch img {
+  aspect-ratio: 1260 / 1400;
+  object-position: center;
+}
+
 @media (min-width: 42rem) {
   .page {
-    padding-top: 3.25rem;
+    padding-top: 1.75rem;
   }
 
   .intro-layout {
@@ -295,6 +349,18 @@ address {
 
   .portrait img {
     width: 14.5rem;
+  }
+}
+
+@media (min-width: 52rem) {
+  .hero img {
+    aspect-ratio: 16 / 9;
+    object-position: center 82%;
+  }
+
+  .break-goldfish img {
+    aspect-ratio: 16 / 9;
+    object-position: 68% 40%;
   }
 }
 
@@ -318,6 +384,19 @@ address {
     width: auto;
     margin: 0;
     padding: 0;
+  }
+
+  .break-goldfish {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero img,
+  .break-goldfish img {
+    aspect-ratio: auto;
+    max-height: 4.5in;
+    object-position: center;
   }
 
   a {
