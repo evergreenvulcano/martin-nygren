@@ -15,7 +15,7 @@ Each picture is its own set of files in `assets/`. To swap one, replace that set
 
 - Hero and Open Graph: `forest-800.jpg`, `forest-1163.jpg`
 - Introduction: `martin-800`, `martin-900` (`.webp` and `.jpg`)
-- Before Experience: `goldfish-800`, `goldfish-1600`, `goldfish-2000`
-- Before Verboten Media: `arch-800`, `arch-1260`
+- Before Experience: `arch-800`, `arch-1260`
+- Before Verboten Media: `goldfish-800`, `goldfish-1600`, `goldfish-2000`
 
 The number is the width. WebP is used where it is smaller; JPEG is the fallback. The forest hero stays JPEG, because WebP at the same quality was larger. Generated files are about quality 78, and none are wider than the source.

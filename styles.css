@@ -316,14 +316,14 @@ address {
 }
 
 .break-goldfish {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: min(26.25rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .break-goldfish img {
-  aspect-ratio: 4 / 3;
-  object-position: center 42%;
+  aspect-ratio: 3 / 2;
+  object-position: center top;
 }
 
 .break-arch {
@@ -357,11 +357,6 @@ address {
     aspect-ratio: 16 / 9;
     object-position: center 82%;
   }
-
-  .break-goldfish img {
-    aspect-ratio: 16 / 9;
-    object-position: 68% 40%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -386,14 +381,7 @@ address {
     padding: 0;
   }
 
-  .break-goldfish {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .hero img,
-  .break-goldfish img {
+  .hero img {
     aspect-ratio: auto;
     max-height: 4.5in;
     object-position: center;
