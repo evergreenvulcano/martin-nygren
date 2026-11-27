@@ -1,0 +1,409 @@
+:root {
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --text: #1c1917;
+  --muted: #44403c;
+  --line: #e4e1da;
+  --paper: #f7f6f3;
+  --focus: #1c1917;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  background: #fff;
+  color: var(--text);
+  transform: translateY(-150%);
+  z-index: 2;
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.page {
+  width: min(40rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 1.4rem 0 4.5rem;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.85rem;
+}
+
+h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.35rem;
+}
+
+h3 {
+  margin: 1.6rem 0 0.7rem;
+  font-size: 1.08rem;
+}
+
+h4 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 0.9rem;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.lang {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.lang button {
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.lang button[aria-pressed="true"] {
+  color: var(--text);
+  border-color: var(--line);
+  background: #fff;
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+.hero {
+  margin: 0;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 58%;
+  background: #243028;
+}
+
+.intro {
+  margin-top: 0;
+}
+
+.lede {
+  font-size: 1.08rem;
+}
+
+.intro-layout {
+  display: grid;
+  gap: 1.15rem;
+  align-items: start;
+}
+
+.portrait {
+  margin: 0.15rem 0 0;
+}
+
+.portrait picture,
+.break picture {
+  display: block;
+}
+
+.portrait img {
+  display: block;
+  width: min(14.5rem, 100%);
+  height: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--line);
+}
+
+.toc {
+  margin-top: 1.35rem;
+}
+
+.toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.toc a {
+  color: var(--muted);
+  text-decoration-thickness: 1px;
+}
+
+.work-list {
+  margin: 0.25rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.work-list li + li {
+  margin-top: 0.35rem;
+}
+
+.roles {
+  margin-top: 0.4rem;
+}
+
+.role {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.role:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.role header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.role .when {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.role p {
+  margin: 0.25rem 0 0;
+}
+
+.quote {
+  margin: 1.2rem 0;
+}
+
+.quote blockquote {
+  margin: 0;
+  padding: 0 0 0 0.95rem;
+  border-left: 2px solid var(--text);
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+
+.quote p {
+  margin: 0;
+}
+
+.quote figcaption {
+  margin: 0.45rem 0 0 0.95rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  width: min(22rem, 100%);
+  margin-top: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: #a8a29e;
+}
+
+.kicker {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.card .label {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  overflow-wrap: anywhere;
+}
+
+address {
+  font-style: normal;
+}
+
+.break {
+  margin: 2.75rem 0 0;
+}
+
+.break img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #1c1917;
+}
+
+.break-goldfish {
+  width: 100%;
+}
+
+.break-goldfish img {
+  aspect-ratio: 4 / 3;
+  object-position: center top;
+}
+
+.break-arch {
+  width: min(28rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.break-arch img {
+  aspect-ratio: 1260 / 1400;
+  object-position: center;
+}
+
+@media (min-width: 42rem) {
+  .page {
+    padding-top: 1.75rem;
+  }
+
+  .intro-layout {
+    grid-template-columns: minmax(0, 1fr) 14.5rem;
+    gap: 1.5rem;
+  }
+
+  .portrait img {
+    width: 14.5rem;
+  }
+}
+
+@media (min-width: 52rem) {
+  .hero img {
+    aspect-ratio: 16 / 9;
+    object-position: center 82%;
+  }
+
+  .break-goldfish {
+    width: min(125%, calc(100vw - 3rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .skip,
+  .lang {
+    display: none !important;
+  }
+
+  .page {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero img {
+    aspect-ratio: auto;
+    max-height: 4.5in;
+    object-position: center;
+  }
+
+  .break-goldfish {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .card {
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+}
