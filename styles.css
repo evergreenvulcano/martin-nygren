@@ -189,10 +189,6 @@ section {
   background: var(--line);
 }
 
-.portrait-aquarium img {
-  object-position: right top;
-}
-
 .toc {
   margin-top: 1.35rem;
 }
@@ -319,14 +315,12 @@ address {
   background: #1c1917;
 }
 
-.break-martin {
-  width: min(26.25rem, 100%);
-  margin-left: auto;
-  margin-right: auto;
+.break-goldfish {
+  width: 100%;
 }
 
-.break-martin img {
-  aspect-ratio: 3 / 4;
+.break-goldfish img {
+  aspect-ratio: 4 / 3;
   object-position: center top;
 }
 
@@ -361,6 +355,12 @@ address {
     aspect-ratio: 16 / 9;
     object-position: center 82%;
   }
+
+  .break-goldfish {
+    width: min(125%, calc(100vw - 3rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -389,6 +389,12 @@ address {
     aspect-ratio: auto;
     max-height: 4.5in;
     object-position: center;
+  }
+
+  .break-goldfish {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
   }
 
   a {
